@@ -25,17 +25,15 @@ public class Player {
         this.Point = point;
     }
 
-//  Constructor
-    public Player(String name) {
-        this.Name = name;
-    }
-
     //method
     Scanner scanner = new Scanner(System.in);
-    public void play(int choice, Player player){
-        int newPoint = player.getPoint() + Dice.roll(choice);
+    public void play(int choice){
+        int newPoint = this.getPoint() + Dice.roll(choice);
         if (newPoint > 21) newPoint = 0;
-        player.setPoint(newPoint);
-        System.out.println(player.getName() + "'s current point: " + player.getPoint());
+        this.setPoint(newPoint);
+        System.out.println(this.getName() + "'s current point: " + this.getPoint());
+    }
+
+    public void FailureReact() {
     }
 }
